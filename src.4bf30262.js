@@ -3,4 +3,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./css/styles.css");const e=document.getElementById("search-box"),t=300;function n(e){s(e.currentTarget.value)}function s(e){fetch(`https://restcountries.com/v3.1/name/${e}`).then(e=>e.json()).then(e=>{console.log("rerender",e)})}e.addEventListener("input",n);
 },{"./css/styles.css":"krre"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-10/src.4bf30262.js.map
+//# sourceMappingURL=/goit-js-hw-10/dist/src.4bf30262.js.map
