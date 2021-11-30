@@ -15,17 +15,36 @@ body {
 #search-box {
   font: inherit;
   padding: 8px;
-  max-width: 320px;
+  max-width: 420px;
   margin-bottom: 16px;
   border: 1px solid #585858;
   border-radius: 5px;
 }
 
+.country-list {
+  margin: 0;
+  padding: 0;
+  max-width: 500px;
+}
+
 .country-list__item {
   display: flex;
+  height: 40px;
+  padding: 3px;
+  margin-bottom: 20px;
 }
+
 .country-list__img {
   width: 30%;
   display: block;
   width: 100%;
+  max-width: 50px;
+}
+
+.country-list__name {
+  text-align: center;
+  font-weight: 500;
+  font-size: 22px;
+  padding: 0;
+  margin: 0 0 0 10px;
 }
