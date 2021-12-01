@@ -11,6 +11,10 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+p {
+  padding: 0;
+  margin: 0;
+}
 
 #search-box {
   font: inherit;
@@ -41,6 +45,7 @@ body {
   width: 100%;
   height: auto;
   max-width: 50px;
+  /* max-width: 75px; */
 }
 
 .country-list__flag img {
@@ -53,6 +58,11 @@ body {
   text-align: center;
   font-weight: 500;
   font-size: 22px;
-  padding: 0;
+  /* font-size: 35px; */
   margin: 0 0 0 10px;
+}
+
+.country-list__capital {
+  font-size: 22px;
+  font-weight: 400;
 }
