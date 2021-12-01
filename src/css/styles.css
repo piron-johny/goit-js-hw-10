@@ -68,6 +68,7 @@ p {
 }
 .country-list__name--max {
     font-size: 30px;
+    line-height: 1;
 }
 
 .country-list__capital,
