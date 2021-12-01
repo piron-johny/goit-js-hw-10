@@ -34,6 +34,8 @@ function renderCountriesList(data) {
     return (countryList.innerHTML = Counrties);
   }
   if (data.length === 1) {
+    document.querySelector('.country-list__flag').classList.add('country-list__flag--max')
+    document.querySelector('.country-list__name').classList.add('country-list__name--max')
     return (countryList.innerHTML = Counrties), (countryInfo.innerHTML = CounrtiesInfo);
   }
   Notify.info('Too many matches found. Please enter a more specific name.');

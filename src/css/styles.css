@@ -45,7 +45,11 @@ p {
   width: 100%;
   height: auto;
   max-width: 50px;
-  /* max-width: 75px; */
+
+}
+
+.country-list__flag--max {
+    max-width: 75px;
 }
 
 .country-list__flag img {
@@ -58,11 +62,16 @@ p {
   text-align: center;
   font-weight: 500;
   font-size: 22px;
-  /* font-size: 35px; */
+
   margin: 0 0 0 10px;
 }
+.country-list__name--max {
+    font-size: 35px;
+}
 
-.country-list__capital {
+.country-list__capital,
+.country-list__population,
+.country-list__languages {
   font-size: 22px;
   font-weight: 400;
 }
