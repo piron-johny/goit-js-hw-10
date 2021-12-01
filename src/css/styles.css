@@ -37,6 +37,7 @@ p {
 
 .country-list__wrapper {
   display: flex;
+  align-items: center;
   padding: 3px;
   margin-bottom: 20px;
 }

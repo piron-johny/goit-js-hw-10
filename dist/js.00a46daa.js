@@ -198,7 +198,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.fetchCountries = fetchCountries;
 
 function fetchCountries(name) {
-  if (name.length) return fetch(`https://restcountries.com/v2/name/${name}?fields=name,capital,population,languages,flag`).then(response => response.json());
+  if (name.length) return fetch(`https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,languages,flags`).then(response => response.json());
 }
 },{}],"../node_modules/notiflix/build/notiflix-notify-aio.js":[function(require,module,exports) {
 var define;
@@ -2817,11 +2817,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const templateFunction = _handlebars.default.template({
   "compiler": [8, ">= 4.3.0"],
   "main": function (container, depth0, helpers, partials, data) {
-    var helper,
-        alias1 = depth0 != null ? depth0 : container.nullContext || {},
-        alias2 = container.hooks.helperMissing,
-        alias3 = "function",
-        alias4 = container.escapeExpression,
+    var stack1,
+        alias1 = container.lambda,
+        alias2 = container.escapeExpression,
         lookupProperty = container.lookupProperty || function (parent, propertyName) {
       if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
         return parent[propertyName];
@@ -2830,49 +2828,7 @@ const templateFunction = _handlebars.default.template({
       return undefined;
     };
 
-    return "<li class='country-list__item'>\r\n  <div class='country-list__wrapper'>\r\n    <img src='" + alias4((helper = (helper = lookupProperty(helpers, "flag") || (depth0 != null ? lookupProperty(depth0, "flag") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-      "name": "flag",
-      "hash": {},
-      "data": data,
-      "loc": {
-        "start": {
-          "line": 3,
-          "column": 14
-        },
-        "end": {
-          "line": 3,
-          "column": 22
-        }
-      }
-    }) : helper)) + "' alt='Flag of " + alias4((helper = (helper = lookupProperty(helpers, "name") || (depth0 != null ? lookupProperty(depth0, "name") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-      "name": "name",
-      "hash": {},
-      "data": data,
-      "loc": {
-        "start": {
-          "line": 3,
-          "column": 37
-        },
-        "end": {
-          "line": 3,
-          "column": 45
-        }
-      }
-    }) : helper)) + "' class='country-list__flag country-list__flag--max' />\r\n    <p class='country-list__name country-list__name--max'>" + alias4((helper = (helper = lookupProperty(helpers, "name") || (depth0 != null ? lookupProperty(depth0, "name") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-      "name": "name",
-      "hash": {},
-      "data": data,
-      "loc": {
-        "start": {
-          "line": 4,
-          "column": 58
-        },
-        "end": {
-          "line": 4,
-          "column": 66
-        }
-      }
-    }) : helper)) + "</p>\r\n  </div>\r\n</li>";
+    return "<li class='country-list__item'>\n  <div class='country-list__wrapper'>\n    <img src='" + alias2(alias1((stack1 = depth0 != null ? lookupProperty(depth0, "flags") : depth0) != null ? lookupProperty(stack1, "svg") : stack1, depth0)) + "' alt='Flag of " + alias2(alias1((stack1 = depth0 != null ? lookupProperty(depth0, "name") : depth0) != null ? lookupProperty(stack1, "official") : stack1, depth0)) + "' class='country-list__flag' />\n    <p class='country-list__name'>" + alias2(alias1((stack1 = depth0 != null ? lookupProperty(depth0, "name") : depth0) != null ? lookupProperty(stack1, "official") : stack1, depth0)) + "</p>\n  </div>\n</li>";
   },
   "useData": true
 });
@@ -2893,15 +2849,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const templateFunction = _handlebars.default.template({
   "1": function (container, depth0, helpers, partials, data) {
-    var lookupProperty = container.lookupProperty || function (parent, propertyName) {
-      if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-        return parent[propertyName];
-      }
-
-      return undefined;
-    };
-
-    return "    <span>" + container.escapeExpression(container.lambda(depth0 != null ? lookupProperty(depth0, "name") : depth0, depth0)) + "</span>\r\n";
+    return "\n  <span>" + container.escapeExpression(container.lambda(depth0, depth0)) + ".</span>\n  ";
   },
   "compiler": [8, ">= 4.3.0"],
   "main": function (container, depth0, helpers, partials, data) {
@@ -2933,7 +2881,7 @@ const templateFunction = _handlebars.default.template({
           "column": 53
         }
       }
-    }) : helper)) + "</p>\r\n<p class='country-list__population'>Population: " + alias4((helper = (helper = lookupProperty(helpers, "population") || (depth0 != null ? lookupProperty(depth0, "population") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+    }) : helper)) + ".</p>\n<p class='country-list__population'>Population: " + alias4((helper = (helper = lookupProperty(helpers, "population") || (depth0 != null ? lookupProperty(depth0, "population") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
       "name": "population",
       "hash": {},
       "data": data,
@@ -2947,7 +2895,7 @@ const templateFunction = _handlebars.default.template({
           "column": 62
         }
       }
-    }) : helper)) + "</p>\r\n<p class='country-list__languages'>Languages:\r\n" + ((stack1 = lookupProperty(helpers, "each").call(alias1, depth0 != null ? lookupProperty(depth0, "languages") : depth0, {
+    }) : helper)) + ".</p>\n<p class='country-list__languages'>Languages: " + ((stack1 = lookupProperty(helpers, "each").call(alias1, depth0 != null ? lookupProperty(depth0, "languages") : depth0, {
       "name": "each",
       "hash": {},
       "fn": container.program(1, data, 0),
@@ -2955,11 +2903,11 @@ const templateFunction = _handlebars.default.template({
       "data": data,
       "loc": {
         "start": {
-          "line": 4,
-          "column": 2
+          "line": 3,
+          "column": 46
         },
         "end": {
-          "line": 6,
+          "line": 5,
           "column": 11
         }
       }
@@ -3365,7 +3313,6 @@ var _countriesCardMax = _interopRequireDefault(require("../hbs/countries-card-ma
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// const Handlebars = require('handlebars');
 const debounce = require('lodash.debounce');
 
 const inputValue = document.getElementById('search-box');
@@ -3391,11 +3338,16 @@ function renderCountriesList(data) {
 
   if (data.length > 1 && data.length <= 10) {
     countryInfo.innerHTML = '';
-    return countryList.innerHTML = Counrties;
+    countryList.innerHTML = Counrties;
+    return;
   }
 
   if (data.length === 1) {
-    return countryList.innerHTML = Counrties, countryInfo.innerHTML = CounrtiesInfo;
+    countryList.innerHTML = Counrties;
+    countryInfo.innerHTML = CounrtiesInfo;
+    document.querySelector('.country-list__flag').classList.add('country-list__flag--max');
+    document.querySelector('.country-list__name').classList.add('country-list__name--max');
+    return;
   }
 
   _notiflixNotifyAio.Notify.info('Too many matches found. Please enter a more specific name.');
@@ -3428,7 +3380,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54229" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40751" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

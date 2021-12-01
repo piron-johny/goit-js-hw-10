@@ -11,6 +11,10 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+p {
+  padding: 0;
+  margin: 0;
+}
 
 #search-box {
   font: inherit;
@@ -33,6 +37,7 @@ body {
 
 .country-list__wrapper {
   display: flex;
+  align-items: center;
   padding: 3px;
   margin-bottom: 20px;
 }
@@ -41,6 +46,11 @@ body {
   width: 100%;
   height: auto;
   max-width: 50px;
+
+}
+
+.country-list__flag--max {
+    max-width: 75px;
 }
 
 .country-list__flag img {
@@ -53,8 +63,18 @@ body {
   text-align: center;
   font-weight: 500;
   font-size: 22px;
-  padding: 0;
+
   margin: 0 0 0 10px;
+}
+.country-list__name--max {
+    font-size: 35px;
+}
+
+.country-list__capital,
+.country-list__population,
+.country-list__languages {
+  font-size: 22px;
+  font-weight: 400;
 }
 
 
