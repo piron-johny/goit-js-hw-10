@@ -14,12 +14,13 @@ const DEBOUNCE_DELAY = 300;
 inputValue.addEventListener('input', debounce(onInputValue, DEBOUNCE_DELAY));
 
 function onInputValue(e) {
-  const countriesValue = e.target.value;
+  const countriesValue = (e.target.value).trim().toLowerCase();
+
   if (countriesValue == '') {
     countryList.innerHTML = '';
     countryInfo.innerHTML = '';
   } else {
-    fetchCountries(countriesValue.trim().toLowerCase())
+    fetchCountries(countriesValue)
       .then(renderCountriesList)
       .catch(err => Notify.failure('Oops, there is no country with that name'));
   }

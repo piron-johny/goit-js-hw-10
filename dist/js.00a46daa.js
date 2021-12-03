@@ -3322,13 +3322,13 @@ const DEBOUNCE_DELAY = 300;
 inputValue.addEventListener('input', debounce(onInputValue, DEBOUNCE_DELAY));
 
 function onInputValue(e) {
-  const countriesValue = e.target.value;
+  const countriesValue = e.target.value.trim().toLowerCase();
 
   if (countriesValue == '') {
     countryList.innerHTML = '';
     countryInfo.innerHTML = '';
   } else {
-    (0, _fetchCountries.fetchCountries)(countriesValue.trim().toLowerCase()).then(renderCountriesList).catch(err => _notiflixNotifyAio.Notify.failure('Oops, there is no country with that name'));
+    (0, _fetchCountries.fetchCountries)(countriesValue).then(renderCountriesList).catch(err => _notiflixNotifyAio.Notify.failure('Oops, there is no country with that name'));
   }
 }
 
@@ -3380,7 +3380,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40751" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42947" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

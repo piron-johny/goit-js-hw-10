@@ -19,7 +19,7 @@ p {
 #search-box {
   font: inherit;
   padding: 8px;
-  width: 500px;
+  width: 350px;
   margin-bottom: 16px;
   border: 1px solid #585858;
   border-radius: 5px;
@@ -62,12 +62,13 @@ p {
 .country-list__name {
   text-align: center;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 18px;
 
   margin: 0 0 0 10px;
 }
 .country-list__name--max {
-    font-size: 35px;
+    font-size: 30px;
+    line-height: 1;
 }
 
 .country-list__capital,
