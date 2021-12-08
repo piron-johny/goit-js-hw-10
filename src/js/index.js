@@ -27,17 +27,17 @@ function onInputValue(e) {
 }
 
 function renderCountriesList(data) {
-  const Counrties = data.map(elem => markupCountriesList(elem)).join('');
-  const CounrtiesInfo = data.map(elem => markupCountriesInfo(elem)).join('');
+  const counrties = data.map(elem => markupCountriesList(elem)).join('');
+  const counrtiesInfo = data.map(elem => markupCountriesInfo(elem)).join('');
 
   if (data.length > 1 && data.length <= 10) {
     countryInfo.innerHTML = '';
-    countryList.innerHTML = Counrties;
+    countryList.innerHTML = counrties;
     return;
   }
   if (data.length === 1) {
-    countryList.innerHTML = Counrties;
-    countryInfo.innerHTML = CounrtiesInfo;
+    countryList.innerHTML = counrties;
+    countryInfo.innerHTML = counrtiesInfo;
     document.querySelector('.country-list__flag').classList.add('country-list__flag--max');
     document.querySelector('.country-list__name').classList.add('country-list__name--max');
     return;
